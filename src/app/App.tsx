@@ -1,9 +1,11 @@
+import { Car } from "../components/car/car";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <h1>Form</h1>
+      <h1>Cars</h1>
+      <Car></Car>
     </div>
   );
 }

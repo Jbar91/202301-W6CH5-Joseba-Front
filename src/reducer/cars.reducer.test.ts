@@ -14,8 +14,8 @@ let state: CarStructure[];
 describe("Given the carReducer function", () => {
   beforeEach(() => {
     carMock = [
-      { id: 3, brand: "Porsche", model: "Taycan", img: "car pic" },
-      { id: 99, brand: "BMW", model: "m3", img: "nice car" },
+      { id: 3, brand: "Porsche", model: "Taycan", color: "car pic" },
+      { id: 99, brand: "BMW", model: "m3", color: "nice car" },
     ];
     state = [carMock[1]];
   });
@@ -46,7 +46,7 @@ describe("Given the carReducer function", () => {
   });
   describe("Given the updateCreator function", () => {
     test("Then it should modify an item", () => {
-      const update = { id: 99, brand: "BMW", model: "X6", img: "nice pic" };
+      const update = { id: 99, brand: "BMW", model: "X6", color: "nice pic" };
       const result = carReducer(state, updateCreator(update));
       expect(result).toEqual([update]);
     });
