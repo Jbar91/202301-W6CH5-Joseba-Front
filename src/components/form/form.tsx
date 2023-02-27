@@ -1,8 +1,8 @@
-import { SyntheticEvent, useReducer, useState } from "react";
+import { useState } from "react";
 import { useCars } from "../../hook/use.cars";
-import { CarStructure } from "../../models/car";
-import { carReducer } from "../../reducer/cars.reducer";
+
 import { CarApiRepo } from "../../repo/car.api.repo";
+import "./form.css";
 
 export function Form() {
   let [id, setId] = useState(0);
@@ -30,33 +30,45 @@ export function Form() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        type="number"
-        name=""
-        id=""
-        value={id}
-        onChange={(e) => setId(Number(e.target.value))}
-      />
-      <input
-        type="text"
-        value={brand}
-        onChange={(e) => setBrand(e.target.value)}
-      />
-      <input
-        type="text"
-        name=""
-        id=""
-        value={model}
-        onChange={(e) => setModel(e.target.value)}
-      />
-      <input
-        type="text"
-        name=""
-        id=""
-        value={color}
-        onChange={(e) => setColor(e.target.value)}
-      />
-      <input type="submit" value="" />
+      <label htmlFor="">
+        Enter ID:
+        <input
+          type="number"
+          name=""
+          id=""
+          value={id}
+          onChange={(e) => setId(Number(e.target.value))}
+        />
+      </label>
+      <label htmlFor="">
+        Enter Car Brand:
+        <input
+          type="text"
+          value={brand}
+          onChange={(e) => setBrand(e.target.value)}
+        />
+      </label>
+      <label htmlFor="">
+        Enter Model:
+        <input
+          type="text"
+          name=""
+          id=""
+          value={model}
+          onChange={(e) => setModel(e.target.value)}
+        />
+      </label>
+      <label htmlFor="">
+        Enter Color:
+        <input
+          type="text"
+          name=""
+          id=""
+          value={color}
+          onChange={(e) => setColor(e.target.value)}
+        />
+      </label>
+      <input type="submit" value="Send" />
     </form>
   );
 }
